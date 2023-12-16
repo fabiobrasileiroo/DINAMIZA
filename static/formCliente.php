@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <?php
@@ -75,13 +75,13 @@
             <main class="content">
                 <div class="container-fluid p-0">
 
-                    <h1 class="h3 mb-3">Cliente</h1>
+                    <h1 class="h3 mb-3">Usuário</h1>
 
 
                     <div class="col-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Formulário do Cliente</h5>
+                                <h5>Formulário do usuário</h5>
                             </div>
                             <div class="card-body">
                                 <form action="cadastroCliente.php" enctype='multipart/form-data' method='post'>
@@ -174,13 +174,13 @@
                 </div>
             </main>
             <main class="content">
-                <h4 class="h3 mb-3">Lista de Clientes</h4>
+                <h4 class="h3 mb-3">Lista de Usuário</h4>
 
 
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Dados dos Clientes</h5>
+                            <h5>Dados dos Usuário</h5>
                         </div>
                         <div class="card-body">
                             <table class="table">

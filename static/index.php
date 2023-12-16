@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 	<?php
         include 'header.php';
     ?>
@@ -35,9 +37,9 @@
 			new Chart(document.getElementById("chartjs-dashboard-line"), {
 				type: "line",
 				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					labels: ["Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
 					datasets: [{
-						label: "Sales ($)",
+						label: "Dinheiro (R$)",
 						fill: true,
 						backgroundColor: gradient,
 						borderColor: window.theme.primary,
@@ -103,7 +105,7 @@
 				data: {
 					labels: ["Chrome", "Firefox", "IE"],
 					datasets: [{
-						data: [4306, 3801, 1689],
+						data: [5, 1, 2],
 						backgroundColor: [
 							window.theme.primary,
 							window.theme.warning,
@@ -129,7 +131,7 @@
 			new Chart(document.getElementById("chartjs-dashboard-bar"), {
 				type: "bar",
 				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					labels: ["Jan", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
 					datasets: [{
 						label: "This year",
 						backgroundColor: window.theme.primary,
@@ -167,85 +169,65 @@
 			});
 		});
 	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var markers = [{
-					coords: [31.230391, 121.473701],
-					name: "Shanghai"
-				},
-				{
-					coords: [28.704060, 77.102493],
-					name: "Delhi"
-				},
-				{
-					coords: [6.524379, 3.379206],
-					name: "Lagos"
-				},
-				{
-					coords: [35.689487, 139.691711],
-					name: "Tokyo"
-				},
-				{
-					coords: [23.129110, 113.264381],
-					name: "Guangzhou"
-				},
-				{
-					coords: [40.7127837, -74.0059413],
-					name: "New York"
-				},
-				{
-					coords: [34.052235, -118.243683],
-					name: "Los Angeles"
-				},
-				{
-					coords: [41.878113, -87.629799],
-					name: "Chicago"
-				},
-				{
-					coords: [51.507351, -0.127758],
-					name: "London"
-				},
-				{
-					coords: [40.416775, -3.703790],
-					name: "Madrid "
-				}
-			];
-			var map = new jsVectorMap({
-				map: "world",
-				selector: "#world_map",
-				zoomButtons: true,
-				markers: markers,
-				markerStyle: {
-					initial: {
-						r: 9,
-						strokeWidth: 7,
-						stokeOpacity: .4,
-						fill: window.theme.primary
-					},
-					hover: {
-						fill: window.theme.primary,
-						stroke: window.theme.primary
-					}
-				},
-				zoomOnScroll: false
-			});
-			window.addEventListener("resize", () => {
-				map.updateSize();
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
-			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-			document.getElementById("datetimepicker-dashboard").flatpickr({
-				inline: true,
-				prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-				nextArrow: "<span title=\"Next month\">&raquo;</span>",
-				defaultDate: defaultDate
-			});
-		});
-	</script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var map = L.map('map').setView([-14, -55],3.9);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            var moneyIcon = L.icon({
+                iconUrl: 'img/icons/logo-pig.ico', // Substitua pelo caminho do seu ícone de dinheiro
+                iconSize: [32, 32], // Ajuste o tamanho do ícone conforme necessário
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+
+            var markers = [
+                { coords: [-15.7801, -47.9292], name: "Brasília" },
+                { coords: [-3.1190, -60.0217], name: "Manaus" },
+				{ coords: [-23.5505, -46.6333], name: "São Paulo" },
+                { coords: [-12.9714, -38.5014], name: "Salvador" },
+                { coords: [-3.7172, -38.5433], name: "Fortaleza" },
+                { coords: [-15.6010, -56.0974], name: "Cuiabá" },
+                { coords: [-30.0330, -51.2200], name: "Porto Alegre" },
+                { coords: [-19.9190, -43.9386], name: "Belo Horizonte" },
+                { coords: [-7.1150, -34.8641], name: "João Pessoa" },
+                { coords: [-22.9068, -43.1729], name: "Rio de Janeiro" },
+                { coords: [-8.0476, -34.8770], name: "Recife" },
+            ];
+
+            markers.forEach(function(marker) {
+                L.marker(marker.coords, { icon: moneyIcon }).addTo(map)
+                    .bindPopup(marker.name);
+            });
+        });
+    </script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date();
+        var defaultDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        
+        flatpickr.l10ns.default.firstDayOfWeek = 0; // Configure o primeiro dia da semana (0 = domingo, 1 = segunda-feira, etc.)
+        flatpickr.localize(flatpickr.l10ns.pt); // Configurar o idioma para português
+
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Mês anterior\">&laquo;</span>",
+            nextArrow: "<span title=\"Próximo mês\">&raquo;</span>",
+            defaultDate: defaultDate,
+            dateFormat: "d/m/Y" // Adicionado para formatar a data no padrão brasileiro
+        });
+    });
+</script>
+
+
+
 
 </body>
 
