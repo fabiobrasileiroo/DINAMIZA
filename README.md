@@ -1,10 +1,10 @@
 <p align="center">
   <a href="https://pages.prozeducacao.com.br/lp-proz-tecnologia-talento-cloud"><img src="imgREADME/proz-aws.png" alt="AdminKit is a free & open-source HTML dashboard & admin template based on Bootstrap 5" ></a> </p>
 
-<h3 align="center">Proz | Projeto integrado</h3>
+<h3 align="center">Proz | Projeto integrador</h3>
 
 <p align="center">
-  Projeto desenvolvido no decorrer das sprints do curso da proz com parceria com aws
+  Projeto desenvolvido durante as sprints do curso da Proz em parceria com a AWS
 </p>
 
 <p align="center">
@@ -13,15 +13,6 @@
   <br>
 <a href="https://www.linkedin.com/in/fabiobrasileiro/"><img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
-
-## Preview
-DINAMI$A um gerenciamento de dinheiro facil e rapido. [Open demo](https://fintech-liard.vercel.app/Pages/).
-<img src="./imgREADME/Screens_026.png" alt="Index">
-<img src="./imgREADME/Screens_024.png" alt="Index">
-<img src="./imgREADME/Screens_025.png" alt="Index">
-<img src="./imgREADME/Screens_023.png" alt="Index">
-<img src="./imgREADME/Screens_022.png" alt="Index">
-<img src="./imgREADME/Screens_021.png" alt="Index">
 
 ## Stack usadas
 <div style="display:flex;">
@@ -32,3 +23,16 @@ DINAMI$A um gerenciamento de dinheiro facil e rapido. [Open demo](https://fintec
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 </div>
+</br>
+
+## Preview
+DINAMI$A é um gerenciamento de dinheiro fácil e rápido. [Open demo](https://fintech-liard.vercel.app/Pages/).
+</br>
+
+<img src="./imgREADME/Screens_026.png" alt="Index">
+<img src="./imgREADME/Screens_024.png" alt="Index">
+<img src="./imgREADME/Screens_025.png" alt="Index">
+<img src="./imgREADME/Screens_023.png" alt="Index">
+<img src="./imgREADME/Screens_022.png" alt="Index">
+<img src="./imgREADME/Screens_021.png" alt="Index">
+
