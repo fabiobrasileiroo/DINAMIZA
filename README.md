@@ -28,7 +28,7 @@
 ## Preview
 DINAMI$A é um gerenciamento de dinheiro fácil e rápido. [Open demo](https://fintech-liard.vercel.app/Pages/).
 </br>
-
+<video>  <source src="video/Design sem nome(1).mp4'" type="video/mp4"></video>
 <img src="./imgREADME/Screens_026.png" alt="Index">
 <img src="./imgREADME/Screens_024.png" alt="Index">
 <img src="./imgREADME/Screens_025.png" alt="Index">
